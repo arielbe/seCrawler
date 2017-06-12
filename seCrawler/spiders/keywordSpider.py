@@ -13,7 +13,7 @@ class KeywordSpider(Spider):
     search_engine = None
     selector = None
 
-    def __init__(self, keyword, se='bing', pages=50,  *args, **kwargs):
+    def __init__(self, keyword, se='google.com', pages=1,  *args, **kwargs):
         super(KeywordSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword.lower()
         self.search_engine = se.lower()
