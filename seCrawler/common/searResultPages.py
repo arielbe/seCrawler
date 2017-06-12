@@ -1,31 +1,29 @@
-__author__ = 'tixie'
-
 from searchEngines import SearchEngines
 
 
-class searResultPages:
-    totalPage = 0
+class SearResultPages:
+    total_page = 0
     keyword = None,
-    searchEngineUrl = None
-    currentPage = 0
-    searchEngine = None
+    search_engine_url = None
+    current_page = 0
+    search_engine = None
 
-    def __init__(self, keyword, searchEngine, totalPage):
-        self.searchEngine = searchEngine.lower()
-        self.searchEngineUrl = SearchEngines[self.searchEngine]
-        self.totalPage = totalPage
+    def __init__(self, keyword, search_engine, total_page):
+        self.search_engine = search_engine.lower()
+        self.search_engine_url = SearchEngines[self.search_engine]
+        self.total_page = total_page
         self.keyword = keyword
-        print "total page:{0}".format(self.totalPage)
+        print "total page: {0}".format(self.total_page)
 
     def __iter__(self):
-        return  self
+        return self
 
-    def _currentUrl(self):
-        return self.searchEngineUrl.format(self.keyword, str(self.currentPage  * 10))
+    def _current_url(self):
+        return self.search_engine_url.format(self.keyword, str(self.current_page * 10))
 
     def next(self):
-        if self.currentPage < self.totalPage:
-            url =  self._currentUrl()
-            self.currentPage = self.currentPage + 1
-            return  url
+        if self.current_page < self.total_page:
+            url = self._current_url()
+            self.current_page = self.current_page + 1
+            return url
         raise StopIteration
