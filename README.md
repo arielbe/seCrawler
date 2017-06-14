@@ -1,3 +1,12 @@
+<h1>Ariel:</h1>
+
+1. $ docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash
+2. Run rest_api/api.py
+3. http://localhost:8888/crawler?keyword=wolverine&pages=1
+
+* I didn't allow a search engine argument since I've only supported Google.
+
+
 # seCrawler(Search Engine Crawler)
 A scrapy project can crawl search result of Google/Bing/Baidu
 

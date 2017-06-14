@@ -13,7 +13,7 @@ class SearResultPages:
         self.search_engine_url = SearchEngines[self.search_engine]
         self.total_page = total_page
         self.keyword = keyword
-        print "total page: {0}".format(self.total_page)
+        print 'Total page: {0}'.format(self.total_page)
 
     def __iter__(self):
         return self
@@ -24,6 +24,6 @@ class SearResultPages:
     def next(self):
         if self.current_page < self.total_page:
             url = self._current_url()
-            self.current_page = self.current_page + 1
+            self.current_page += 1
             return url
         raise StopIteration
